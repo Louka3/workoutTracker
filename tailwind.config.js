@@ -6,8 +6,12 @@ module.exports = {
       colors: {
         text: "#000000",
         background: "#eff0f0",
+        "background-darker": "#E3E4E4",
         primary: "#58e9c7",
+        "primary-op": "rgba(88, 233, 199, 0.7)",
+        "primary-hover": "rgba(88, 233, 199, 0.85)",
         secondary: "#66998d",
+        "secondary-op": "rgba(102, 153, 141, 0.65)",
         accent: "#26e3b7",
         "text-dark": "#ffffff",
         "background-dark": "#0f1010",
