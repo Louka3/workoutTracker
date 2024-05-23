@@ -1,13 +1,15 @@
 {
   "name": "workout-tracker",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:workoutTracker": "node dist/workout-tracker/server/server.mjs"
+    "serve:ssr:workoutTracker": "node dist/workout-tracker/server/server.mjs",
+    "server": "node dist/out-tsc/server/server.js"
   },
   "private": true,
   "dependencies": {
