@@ -1,66 +1,36 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { CommonEngine } from '@angular/ssr';
 import express from 'express';
-import { fileURLToPath } from 'node:url';
-import { dirname, join, resolve } from 'node:path';
-import bootstrap from '../src/main.server';
-// import { workoutRouter } from './routes/workoutRoutes';
+import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-// import { errorMiddleware } from './middleware/errorMiddleware';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
-  const server = express();
-  const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
-  const indexHtml = join(serverDistFolder, 'index.server.html');
+import { workoutRouter } from './routes/workoutRoutes.js';
 
-  const commonEngine = new CommonEngine();
+import { errorMiddleware } from './middleware/errorMiddleware.js';
 
-  server.set('view engine', 'html');
-  server.set('views', browserDistFolder);
+const app = express();
+const port = 3000;
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
-  server.get(
-    '*.*',
-    express.static(browserDistFolder, {
-      maxAge: '1y',
-    })
-  );
+// Cors configuration - Allows requests from localhost:4200
+const corsOptions = {
+  origin: 'http://localhost:4200',
+  optionsSuccessStatus: 204,
+  methods: 'GET, POST, PUT, DELETE',
+};
 
-  // All regular routes use the Angular engine
-  server.get('*', (req, res, next) => {
-    const { protocol, originalUrl, baseUrl, headers } = req;
+// Use cors middleware
+app.use(cors(corsOptions));
 
-    commonEngine
-      .render({
-        bootstrap,
-        documentFilePath: indexHtml,
-        url: `${protocol}://${headers.host}${originalUrl}`,
-        publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-      })
-      .then((html) => res.send(html))
-      .catch((err) => next(err));
-  });
+// Use express.json() middleware to parse JSON bodies of requests
+app.use(express.json());
+app.use(errorMiddleware);
 
-  // server.use('/workouts', workoutRouter);
+app.use('/workouts', workoutRouter);
 
-  // server.use(errorMiddleware);
+app.use(express.static(path.join(__dirname, '../')));
 
-  return server;
-}
-
-function run(): void {
-  const port = process.env['PORT'] || 4000;
-
-  // Start up the Node server
-  const server = app();
-  server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
-  });
-}
-
-run();
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});

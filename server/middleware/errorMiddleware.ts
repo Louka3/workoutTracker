@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { ServerError } from '../types/serverErrorTypes';
+import { ServerError } from '../types/serverErrorTypes.js';
 
 // A default error that, if not overwritten, will be thrown if something
 // goes wrong on the server

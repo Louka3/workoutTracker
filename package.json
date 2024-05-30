@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:workoutTracker": "node dist/workout-tracker/server/server.mjs",
-    "server": "node dist/out-tsc/server/server.js"
+    "server": "node dist/server/server.js"
   },
   "private": true,
   "dependencies": {

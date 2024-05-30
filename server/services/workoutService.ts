@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Workout, Workouts } from '../types/workoutTypes';
+import { Workout, Workouts } from '../types/workoutTypes.js';
 
 export const getWorkoutsService = (workouts: Workouts): Workouts => {
   return workouts;
