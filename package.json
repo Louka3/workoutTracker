@@ -8,8 +8,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:workoutTracker": "node dist/workout-tracker/server/server.mjs",
-    "server": "node dist/server/server.js"
+    "server": "node dist/server/server.js",
+    "dev": "ng serve --open"
   },
   "private": true,
   "dependencies": {
