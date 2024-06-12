@@ -5,6 +5,20 @@ import { WorkoutPageComponent } from './workout-components/workout-page/workout-
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'workout-list', component: WorkoutListComponent },
-  { path: 'workout-list/:workoutName', component: WorkoutPageComponent },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./modules/about-page/about-page.module').then(
+        (m) => m.AboutPageModule
+      ),
+  },
+  {
+    path: 'workout-list',
+    loadChildren: () =>
+      import('./modules/workout-pages/workout-pages.module').then(
+        (m) => m.WorkoutPagesModule
+      ),
+  },
+  // { path: 'workout-list', component: WorkoutListComponent },
+  // { path: 'workout-list/:workoutName', component: WorkoutPageComponent },
 ];
