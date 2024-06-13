@@ -12,6 +12,7 @@ module.exports = {
         "primary-hover": "#DAF9F2",
         secondary: "#66998d",
         "secondary-op": "rgba(102, 153, 141, 0.65)",
+        "secondary-lighter": "rgba(102, 255, 204, 0.65)",
         accent: "#26e3b7",
         "text-dark": "#ffffff",
         "background-dark": "#0f1010",
