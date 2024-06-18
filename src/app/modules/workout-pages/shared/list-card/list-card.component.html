@@ -1,25 +1,44 @@
 <a
   href="./workout-list/airbike"
-  class="max-h-96 block max-w-96 lg:max-w-sm p-6 bg-primary-op border hover:bg-primary-hover border-gray-300 rounded-lg shadow dark:bg-accent-dark dark:hover:bg-accent"
+  class="max-h-96 block max-w-96 lg:max-w-sm p-6 bg-secondary-lighter border hover:bg-primary-hover border-gray-300 rounded-lg shadow dark:bg-accent-dark dark:hover:bg-accent"
 >
   <img
     src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Air_Bike/0.jpg"
     alt=""
     class="object-contain rounded-sm shadow"
   />
+  <!-- <img
+    src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/{{workout.id}}/0.jpg"
+    alt=""
+    class="object-contain rounded-sm shadow"
+  /> -->
   <h5
     class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
   >
     {{ "Air Bike" | truncateName : 16 : "..." }}
   </h5>
+  <!-- <h5
+    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+  >
+    {{ workout.name | truncateName : 16 : "..." }}
+  </h5> -->
   <!-- <p class="font-normal text-gray-700 dark:text-gray-400">
     Here are the biggest enterprise technology acquisitions of 2021 so far, in
     reverse chronological order. Level: Beginner Equipment: Body Only Force:
     Pull
   </p> -->
   <ul class="font-normal text-[1rem] text-black dark:text-white">
-    <li><span class="underline">Level:</span> Beginner</li>
-    <li><span class="underline">Equipment:</span> Body Only</li>
-    <li><span class="underline">Primary Muscles:</span> Abdominals</li>
+    <li>
+      <span class="underline">Level:</span> Beginner
+      <!-- {{workout.level}} -->
+    </li>
+    <li>
+      <span class="underline">Equipment:</span> Body Only
+      <!-- {{workout.equipment}} -->
+    </li>
+    <li>
+      <span class="underline">Primary Muscles:</span> Abdominals
+      <!-- {{workout.primaryMuscles}} -->
+    </li>
   </ul>
 </a>

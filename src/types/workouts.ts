@@ -12,6 +12,14 @@ export interface Workout {
   id: string;
 }
 
+// export interface Workouts {
+//   [key: string]: Workout;
+// }
+
 export interface Workouts {
-  [key: string]: Workout;
+  items: Workout[];
+  total: number;
+  page: number;
+  perPage: number;
+  totalPages: number;
 }

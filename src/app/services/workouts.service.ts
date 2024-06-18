@@ -19,7 +19,7 @@ export class WorkoutsService {
     });
   };
 
-  getWorkout = (url: string): Observable<Workout> => {
+  getWorkout = (url: string, id: string): Observable<Workout> => {
     return this.apiService.get(url, {});
   };
 }

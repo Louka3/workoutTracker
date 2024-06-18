@@ -1,5 +1,8 @@
 <div id="workout-page" class="flex flex-col font-body">
-  <h1 class="text-3xl flex justify-center md:justify-start">Air Bike</h1>
+  <h1 class="text-3xl flex justify-center md:justify-start">
+    Air Bike
+    <!-- {{workout.name}} -->
+  </h1>
   <div id="img-and-info" class="flex flex-wrap justify-between mb-8 mt-5">
     <div class="w-full md:w-[49.5%]">
       <img
@@ -7,6 +10,13 @@
         alt=""
         class="w-full h-auto rounded-lg"
       />
+      <!-- <img
+        src="https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/{{
+          workout.id
+        }}/0.jpg"
+        alt=""
+        class="w-full h-auto rounded-lg"
+      /> -->
     </div>
 
     <div
@@ -15,17 +25,35 @@
       <div
         class="bg-primary-op border-gray-400 border-[1px] shadow flex flex-col justify-evenly h-full w-full p-5 rounded-lg lg:text-xl"
       >
-        <div>Force: Pull</div>
+        <div>
+          Force: Pull
+          <!-- {{workout.force}} -->
+        </div>
 
-        <div>Mechanic: Compound</div>
+        <div>
+          Mechanic: Compound
+          <!-- {{workout.mechanic}} -->
+        </div>
 
-        <div>Equipment: Body Only</div>
+        <div>
+          Equipment: Body Only
+          <!-- {{workout.equipment}} -->
+        </div>
 
-        <div>Primary Muscles: Abdominals</div>
+        <div>
+          Primary Muscles: Abdominals
+          <!-- {{workout.primaryMuscles }} -->
+        </div>
 
-        <div>Secondary Muscles: None</div>
+        <div>
+          Secondary Muscles: None
+          <!-- {{workout.secondatyMuscles }} -->
+        </div>
 
-        <div>Category: Strength</div>
+        <div>
+          Category: Strength
+          <!-- {{workout.category }} -->
+        </div>
       </div>
     </div>
   </div>
@@ -33,6 +61,7 @@
     <h2 class="md:text-xl font-bold underline mb-3 font-[Georgia]">
       Instructions:
     </h2>
+    <!-- <p>{{workout.instructions}}</p> -->
     <p class="mb-3 font-[Georgia]">
       Lie flat on the floor with your lower back pressed to the ground. For this
       exercise, you will need to put your hands beside your head. Be careful
